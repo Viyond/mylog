@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd
+    http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task-3.1.xsd">
+    
+    <!--
+        applicationContext.xml实际是不会存在
+                        配置文件会报错，因为缺少spring的jar包，这里只是模拟spring的依赖注入 
+                        更详细代码请看附件
+     -->
+	
+	<bean id="daoImpl" class="com.yzb.dao.impl.DaoImpl" />
+	
+	<bean id="studentService" class="com.yzb.service.StudentService">
+	   <!-- dao对应private IDao dao; 将实现daoImpl绑定到接口dao -->
+	   <property name="dao" ref="daoImpl"/>  
+	</bean>
+
+</beans>
