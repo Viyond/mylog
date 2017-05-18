@@ -17,4 +17,13 @@ public class LogTest
         LOGGER.trace("......trace");
     }
 
+    public static void printLog()
+    {
+    	// 下面5个方法相当于接口调用实现
+        LOGGER.info("......info");
+        LOGGER.debug("......debug");
+        LOGGER.warn("......warn");
+        LOGGER.error("......error");
+        LOGGER.trace("......trace");
+    }
 }
